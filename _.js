@@ -4,7 +4,7 @@ const _ = {
       const maxNum = Math.max(num, lower);
       return Math.min(maxNum, upper);
     },
-    
+
     // Method 2: Checks if n is between start and up to, but not including, end.
     // If end is not specified, it's set to start with start then set to 0.
     // If start is greater than end the params are swapped to support negative ranges.
@@ -19,6 +19,11 @@ const _ = {
           end = temp;
         };
         return (num >= start && num < end) ? true : false;
+    },
+    // Splits string into an array of its words.
+    words(str) {
+        const arr = str.split(' ');
+        return arr;
     },
 };
 
