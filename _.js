@@ -25,6 +25,20 @@ const _ = {
         const arr = str.split(' ');
         return arr;
     },
+    // Pads string on the left and right sides if it's shorter than length.
+    // Padding characters are truncated if they can't be evenly divided by length.
+    pad(str, len) {
+        const strLen = str.length;
+        const space = ' ';
+        if (strLen > len) {
+          return str;
+        } else if ((len - strLen) % 2 === 0) {
+          str = space.repeat((len - strLen) / 2) + str + space.repeat((len - strLen) / 2);
+        } else {
+          str = space.repeat((len - 1 - strLen) / 2) + str + space.repeat((len + 1 - strLen) / 2);
+        }
+        return str;
+      }
 };
 
 
