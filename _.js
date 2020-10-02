@@ -61,6 +61,16 @@ const _ = {
       };
       return invertedObj;
     },
+
+    // Method 7:  Returns the key of the matched element, else undefined.
+    findKey(obj, func) {
+      for (let key in obj){
+        if (func(obj[key])) {
+          return key;
+        }
+      }
+      return undefined;
+    }
 };
 
 
