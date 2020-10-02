@@ -50,6 +50,17 @@ const _ = {
         return false
       };
     },
+
+    // Method 6: Creates an object composed of the inverted keys and values of `object`.
+    // If `object` contains duplicate values, subsequent values overwrite property assignments of previous values.
+    invert(obj) {
+      let invertedObj = {};
+      for (let key in obj) {
+        let originalValue = obj[key];
+        invertedObj[originalValue] = key;
+      };
+      return invertedObj;
+    },
 };
 
 
