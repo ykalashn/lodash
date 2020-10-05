@@ -70,7 +70,21 @@ const _ = {
         }
       }
       return undefined;
-    }
+    },
+
+    // Method 8: Creates a slice of array with n elements dropped from the beginning.
+    drop(arr, n) {
+      const newArr = arr;
+      if (n === undefined) {
+        newArr.shift();
+        return newArr;
+      };
+      while (n > 0) {
+        newArr.shift();
+        n--;
+      };
+      return newArr;
+      },
 };
 
 
