@@ -85,6 +85,18 @@ const _ = {
       };
       return newArr;
       },
+
+      // Method 9: Creates a slice of array excluding elements dropped from the beginning.
+      // Elements are dropped until predicate returns falsey.
+      // The predicate is invoked with three arguments: (value, index, array).
+      dropWhile(array, predicate) {
+        const cb = (element, index) => {
+          return !predicate(element, index, array);
+        };
+        let dropNumber = array.findIndex(cb);
+        let newArr = this.drop(array, dropNumber);
+        return newArr;
+      },
 };
 
 
