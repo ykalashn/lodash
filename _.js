@@ -97,6 +97,17 @@ const _ = {
         let newArr = this.drop(array, dropNumber);
         return newArr;
       },
+
+      // Method 10: Creates an array of elements split into groups the length of size. 
+      // If array can't be split evenly, the final chunk will be the remaining elements.
+      chunk(array, size=1) {
+        let nArray = [];
+        for (let i = 0; i < array.length; i += size) {
+          let arrChunk = array.slice(i, (i + size));
+          nArray.push(arrChunk);
+        };
+        return nArray;
+      }
 };
 
 
